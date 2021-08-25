@@ -1,0 +1,116 @@
+[debug] [2021-08-25T13:20:35.990Z] ----------------------------------------------------------------------
+[debug] [2021-08-25T13:20:35.991Z] Command:       /Users/msolomon/.nvm/versions/node/v14.16.0/bin/node /Users/msolomon/.nvm/versions/node/v14.16.0/bin/firebase emulators:start
+[debug] [2021-08-25T13:20:35.991Z] CLI Version:   9.16.5
+[debug] [2021-08-25T13:20:35.992Z] Platform:      darwin
+[debug] [2021-08-25T13:20:35.992Z] Node Version:  v14.16.0
+[debug] [2021-08-25T13:20:35.992Z] Time:          Wed Aug 25 2021 09:20:35 GMT-0400 (Eastern Daylight Time)
+[debug] [2021-08-25T13:20:35.993Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2021-08-25T13:20:36.049Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2021-08-25T13:20:36.049Z] > authorizing via signed-in user (mykcryptodev@gmail.com)
+[info] i  emulators: Starting emulators: auth, firestore, database, hosting, pubsub, storage {"metadata":{"emulator":{"name":"hub"},"message":"Starting emulators: auth, firestore, database, hosting, pubsub, storage"}}
+[debug] [2021-08-25T13:20:36.079Z] [hub] writing locator at /var/folders/wn/wz3q30l50hn4g11fz0zgscl80000gp/T/hub-happy-coin-9ac8b.json
+[debug] [2021-08-25T13:20:36.114Z] Ignoring unsupported arg: projectId {"metadata":{"emulator":{"name":"firestore"},"message":"Ignoring unsupported arg: projectId"}}
+[debug] [2021-08-25T13:20:36.114Z] Ignoring unsupported arg: auto_download {"metadata":{"emulator":{"name":"firestore"},"message":"Ignoring unsupported arg: auto_download"}}
+[debug] [2021-08-25T13:20:36.115Z] Starting Firestore Emulator with command {"binary":"java","args":["-Dgoogle.cloud_firestore.debug_log_level=FINE","-Duser.language=en","-jar","/Users/msolomon/.cache/firebase/emulators/cloud-firestore-emulator-v1.13.1.jar","--host","localhost","--port",8081,"--rules","/Users/msolomon/Projects/Happy-Coin-App/firestore.rules"],"optionalArgs":["port","webchannel_port","host","rules","functions_emulator","seed_from_export"],"joinArgs":false} {"metadata":{"emulator":{"name":"firestore"},"message":"Starting Firestore Emulator with command {\"binary\":\"java\",\"args\":[\"-Dgoogle.cloud_firestore.debug_log_level=FINE\",\"-Duser.language=en\",\"-jar\",\"/Users/msolomon/.cache/firebase/emulators/cloud-firestore-emulator-v1.13.1.jar\",\"--host\",\"localhost\",\"--port\",8081,\"--rules\",\"/Users/msolomon/Projects/Happy-Coin-App/firestore.rules\"],\"optionalArgs\":[\"port\",\"webchannel_port\",\"host\",\"rules\",\"functions_emulator\",\"seed_from_export\"],\"joinArgs\":false}"}}
+[info] i  firestore: Firestore Emulator logging to firestore-debug.log {"metadata":{"emulator":{"name":"firestore"},"message":"Firestore Emulator logging to \u001b[1mfirestore-debug.log\u001b[22m"}}
+[debug] [2021-08-25T13:20:37.540Z] Aug 25, 2021 9:20:37 AM com.google.cloud.datastore.emulator.firestore.websocket.WebSocketServer start
+INFO: Started WebSocket server on ws://localhost:51088
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Aug 25, 2021 9:20:37 AM com.google.cloud.datastore.emulator.firestore.websocket.WebSocketServer start\nINFO: Started WebSocket server on ws://localhost:51088\n"}}
+[debug] [2021-08-25T13:20:37.567Z] API endpoint: http:// {"metadata":{"emulator":{"name":"firestore"},"message":"API endpoint: http://"}}
+[debug] [2021-08-25T13:20:37.567Z] localhost:8081
+If you are using a library that supports the FIRESTORE_EMULATOR_HOST environment variable, run:
+
+   export FIRESTORE_EMULATOR_HOST=localhost:8081
+
+Dev App Server is now running.
+
+ {"metadata":{"emulator":{"name":"firestore"},"message":"localhost:8081\nIf you are using a library that supports the FIRESTORE_EMULATOR_HOST environment variable, run:\n\n   export FIRESTORE_EMULATOR_HOST=localhost:8081\n\nDev App Server is now running.\n\n"}}
+[debug] [2021-08-25T13:20:37.664Z] > refreshing access token with scopes: []
+[debug] [2021-08-25T13:20:37.664Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2021-08-25T13:20:37.802Z] <<< HTTP RESPONSE 200 {"date":"Wed, 25 Aug 2021 13:20:37 GMT","cache-control":"no-cache, no-store, max-age=0, must-revalidate","expires":"Mon, 01 Jan 1990 00:00:00 GMT","pragma":"no-cache","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-08-25T13:20:37.855Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/happy-coin-9ac8b [none]
+[debug] [2021-08-25T13:20:38.066Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/happy-coin-9ac8b 200
+[debug] [2021-08-25T13:20:38.066Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/happy-coin-9ac8b {"projectId":"happy-coin-9ac8b","projectNumber":"588424437672","displayName":"Happy Coin","name":"projects/happy-coin-9ac8b","resources":{"hostingSite":"happy-coin-9ac8b","realtimeDatabaseInstance":"happy-coin-9ac8b-default-rtdb","storageBucket":"happy-coin-9ac8b.appspot.com","locationId":"us-central"},"state":"ACTIVE"}
+[debug] [2021-08-25T13:20:38.067Z] database rules config:  [{"instance":"happy-coin-9ac8b-default-rtdb","rules":"/Users/msolomon/Projects/Happy-Coin-App/database.rules.json"}]
+[debug] [2021-08-25T13:20:38.069Z] Ignoring unsupported arg: projectId {"metadata":{"emulator":{"name":"database"},"message":"Ignoring unsupported arg: projectId"}}
+[debug] [2021-08-25T13:20:38.069Z] Ignoring unsupported arg: auto_download {"metadata":{"emulator":{"name":"database"},"message":"Ignoring unsupported arg: auto_download"}}
+[debug] [2021-08-25T13:20:38.069Z] Ignoring unsupported arg: rules {"metadata":{"emulator":{"name":"database"},"message":"Ignoring unsupported arg: rules"}}
+[debug] [2021-08-25T13:20:38.069Z] Starting Database Emulator with command {"binary":"java","args":["-Duser.language=en","-jar","/Users/msolomon/.cache/firebase/emulators/firebase-database-emulator-v4.7.2.jar","--host","localhost","--port",9000],"optionalArgs":["port","host","functions_emulator_port","functions_emulator_host"],"joinArgs":false} {"metadata":{"emulator":{"name":"database"},"message":"Starting Database Emulator with command {\"binary\":\"java\",\"args\":[\"-Duser.language=en\",\"-jar\",\"/Users/msolomon/.cache/firebase/emulators/firebase-database-emulator-v4.7.2.jar\",\"--host\",\"localhost\",\"--port\",9000],\"optionalArgs\":[\"port\",\"host\",\"functions_emulator_port\",\"functions_emulator_host\"],\"joinArgs\":false}"}}
+[info] i  database: Database Emulator logging to database-debug.log {"metadata":{"emulator":{"name":"database"},"message":"Database Emulator logging to \u001b[1mdatabase-debug.log\u001b[22m"}}
+[debug] [2021-08-25T13:20:39.676Z] 09:20:39.674 [NamespaceSystem-akka.actor.default-dispatcher-5] INFO akka.event.slf4j.Slf4jLogger - Slf4jLogger started
+ {"metadata":{"emulator":{"name":"database"},"message":"09:20:39.674 [NamespaceSystem-akka.actor.default-dispatcher-5] INFO akka.event.slf4j.Slf4jLogger - Slf4jLogger started\n"}}
+[debug] [2021-08-25T13:20:39.876Z] 09:20:39.875 [main] INFO com.firebase.server.forge.App$ - Listening at localhost:9000
+ {"metadata":{"emulator":{"name":"database"},"message":"09:20:39.875 [main] INFO com.firebase.server.forge.App$ - Listening at localhost:9000\n"}}
+[debug] [2021-08-25T13:20:43.137Z] Ignoring unsupported arg: projectId {"metadata":{"emulator":{"name":"pubsub"},"message":"Ignoring unsupported arg: projectId"}}
+[debug] [2021-08-25T13:20:43.138Z] Ignoring unsupported arg: auto_download {"metadata":{"emulator":{"name":"pubsub"},"message":"Ignoring unsupported arg: auto_download"}}
+[debug] [2021-08-25T13:20:43.138Z] Starting Pub/Sub Emulator with command {"binary":"/Users/msolomon/.cache/firebase/emulators/pubsub-emulator-0.1.0/pubsub-emulator/bin/cloud-pubsub-emulator","args":["--host=localhost","--port=8085"],"optionalArgs":["port","host"],"joinArgs":true} {"metadata":{"emulator":{"name":"pubsub"},"message":"Starting Pub/Sub Emulator with command {\"binary\":\"/Users/msolomon/.cache/firebase/emulators/pubsub-emulator-0.1.0/pubsub-emulator/bin/cloud-pubsub-emulator\",\"args\":[\"--host=localhost\",\"--port=8085\"],\"optionalArgs\":[\"port\",\"host\"],\"joinArgs\":true}"}}
+[info] i  pubsub: Pub/Sub Emulator logging to pubsub-debug.log {"metadata":{"emulator":{"name":"pubsub"},"message":"Pub/Sub Emulator logging to \u001b[1mpubsub-debug.log\u001b[22m"}}
+[debug] [2021-08-25T13:20:43.350Z] This is the Google Pub/Sub fake.
+Implementation may be incomplete or differ from the real system.
+ {"metadata":{"emulator":{"name":"pubsub"},"message":"This is the Google Pub/Sub fake.\nImplementation may be incomplete or differ from the real system.\n"}}
+[debug] [2021-08-25T13:20:43.403Z] Aug 25, 2021 9:20:43 AM com.google.cloud.pubsub.testing.v1.Main main
+INFO: IAM integration is disabled. IAM policy methods and ACL checks are not supported
+ {"metadata":{"emulator":{"name":"pubsub"},"message":"Aug 25, 2021 9:20:43 AM com.google.cloud.pubsub.testing.v1.Main main\nINFO: IAM integration is disabled. IAM policy methods and ACL checks are not supported\n"}}
+[debug] [2021-08-25T13:20:44.004Z] Aug 25, 2021 9:20:44 AM io.gapi.emulators.netty.NettyUtil applyJava7LongHostnameWorkaround
+INFO: Unable to apply Java 7 long hostname workaround.
+ {"metadata":{"emulator":{"name":"pubsub"},"message":"Aug 25, 2021 9:20:44 AM io.gapi.emulators.netty.NettyUtil applyJava7LongHostnameWorkaround\nINFO: Unable to apply Java 7 long hostname workaround.\n"}}
+[debug] [2021-08-25T13:20:44.133Z] Aug 25, 2021 9:20:44 AM com.google.cloud.pubsub.testing.v1.Main main
+INFO: Server started, listening on 8085
+ {"metadata":{"emulator":{"name":"pubsub"},"message":"Aug 25, 2021 9:20:44 AM com.google.cloud.pubsub.testing.v1.Main main\nINFO: Server started, listening on 8085\n"}}
+[debug] [2021-08-25T13:20:44.165Z] Ignoring unsupported arg: port {"metadata":{"emulator":{"name":"storage"},"message":"Ignoring unsupported arg: port"}}
+[debug] [2021-08-25T13:20:44.286Z] Aug 25, 2021 9:20:44 AM io.gapi.emulators.grpc.GrpcServer$3 operationComplete
+INFO: Adding handler(s) to newly registered Channel.
+ {"metadata":{"emulator":{"name":"pubsub"},"message":"Aug 25, 2021 9:20:44 AM io.gapi.emulators.grpc.GrpcServer$3 operationComplete\nINFO: Adding handler(s) to newly registered Channel.\n"}}
+[debug] [2021-08-25T13:20:44.427Z] Temp file directory for storage emulator: /var/folders/wn/wz3q30l50hn4g11fz0zgscl80000gp/T/firebase/storage/blobs {"metadata":{"emulator":{"name":"storage"},"message":"Temp file directory for storage emulator: /var/folders/wn/wz3q30l50hn4g11fz0zgscl80000gp/T/firebase/storage/blobs"}}
+[debug] [2021-08-25T13:20:45.676Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/happy-coin-9ac8b/sites 
+[debug] [2021-08-25T13:20:46.373Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/happy-coin-9ac8b/sites 200
+[debug] [2021-08-25T13:20:46.373Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/happy-coin-9ac8b/sites {"sites":[{"name":"projects/588424437672/sites/happy-coin-9ac8b","defaultUrl":"https://happy-coin-9ac8b.web.app","appId":"1:588424437672:web:b2f8152a98fc8ed050079d","type":"DEFAULT_SITE"}]}
+[debug] [2021-08-25T13:20:46.374Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/happy-coin-9ac8b/webApps/1:588424437672:web:b2f8152a98fc8ed050079d/config [none]
+[debug] [2021-08-25T13:20:46.938Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/happy-coin-9ac8b/webApps/1:588424437672:web:b2f8152a98fc8ed050079d/config 200
+[debug] [2021-08-25T13:20:46.938Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/happy-coin-9ac8b/webApps/1:588424437672:web:b2f8152a98fc8ed050079d/config {"projectId":"happy-coin-9ac8b","appId":"1:588424437672:web:b2f8152a98fc8ed050079d","databaseURL":"https://happy-coin-9ac8b-default-rtdb.firebaseio.com","storageBucket":"happy-coin-9ac8b.appspot.com","locationId":"us-central","apiKey":"AIzaSyAX_Zric8BW7bA7tq7JdfVeWXFBJMvGLoM","authDomain":"happy-coin-9ac8b.firebaseapp.com","messagingSenderId":"588424437672","measurementId":"G-ENZNV09XJX"}
+[info] i  hosting: Serving hosting files from: dist {"metadata":{"emulator":{"name":"hosting"},"message":"Serving hosting files from: \u001b[1mdist\u001b[22m"}}
+[info] ✔  hosting: Local server: http://localhost:5000 {"metadata":{"emulator":{"name":"hosting"},"message":"Local server: \u001b[4m\u001b[1mhttp://localhost:5000\u001b[22m\u001b[24m"}}
+[warn] ⚠  ui: Emulator UI unable to start on port 4000, starting on 4002 instead. {"metadata":{"emulator":{"name":"ui"},"message":"Emulator UI unable to start on port 4000, starting on 4002 instead."}}
+[debug] [2021-08-25T13:20:47.265Z] Ignoring unsupported arg: auto_download {"metadata":{"emulator":{"name":"ui"},"message":"Ignoring unsupported arg: auto_download"}}
+[debug] [2021-08-25T13:20:47.266Z] Ignoring unsupported arg: port {"metadata":{"emulator":{"name":"ui"},"message":"Ignoring unsupported arg: port"}}
+[debug] [2021-08-25T13:20:47.266Z] Starting Emulator UI with command {"binary":"node","args":["/Users/msolomon/.cache/firebase/emulators/ui-v1.6.2/server.bundle.js"],"optionalArgs":[],"joinArgs":false} {"metadata":{"emulator":{"name":"ui"},"message":"Starting Emulator UI with command {\"binary\":\"node\",\"args\":[\"/Users/msolomon/.cache/firebase/emulators/ui-v1.6.2/server.bundle.js\"],\"optionalArgs\":[],\"joinArgs\":false}"}}
+[info] i  ui: Emulator UI logging to ui-debug.log {"metadata":{"emulator":{"name":"ui"},"message":"Emulator UI logging to \u001b[1mui-debug.log\u001b[22m"}}
+[debug] [2021-08-25T13:20:47.393Z] Web / API server started at localhost:4002
+ {"metadata":{"emulator":{"name":"ui"},"message":"Web / API server started at localhost:4002\n"}}
+[debug] [2021-08-25T13:20:47.532Z] >>> HTTP REQUEST PUT http://localhost:9000/.settings/rules.json?ns=happy-coin-9ac8b-default-rtdb  
+ {
+  "rules": {
+    ".read": false,
+    ".write": false
+  }
+}
+
+[debug] [2021-08-25T13:20:48.007Z] <<< HTTP RESPONSE 200 {"content-length":"15","content-type":"application/json; charset=utf-8","access-control-allow-origin":"*","cache-control":"no-cache","x-firebase-project-id":"happy-coin-9ac8b-default-rtdb","x-firebase-project-number":"123456789","x-firebase-uuid":"f75f2bba-378c-4dce-bbe3-54cd32282261"}
+[info] 
+┌─────────────────────────────────────────────────────────────┐
+│ ✔  All emulators ready! It is now safe to connect your app. │
+│ i  View Emulator UI at http://localhost:4002                │
+└─────────────────────────────────────────────────────────────┘
+
+┌────────────────┬────────────────┬─────────────────────────────────┐
+│ Emulator       │ Host:Port      │ View in Emulator UI             │
+├────────────────┼────────────────┼─────────────────────────────────┤
+│ Authentication │ localhost:9099 │ http://localhost:4002/auth      │
+├────────────────┼────────────────┼─────────────────────────────────┤
+│ Firestore      │ localhost:8081 │ http://localhost:4002/firestore │
+├────────────────┼────────────────┼─────────────────────────────────┤
+│ Database       │ localhost:9000 │ http://localhost:4002/database  │
+├────────────────┼────────────────┼─────────────────────────────────┤
+│ Hosting        │ localhost:5000 │ n/a                             │
+├────────────────┼────────────────┼─────────────────────────────────┤
+│ Pub/Sub        │ localhost:8085 │ n/a                             │
+├────────────────┼────────────────┼─────────────────────────────────┤
+│ Storage        │ localhost:9199 │ http://localhost:4002/storage   │
+└────────────────┴────────────────┴─────────────────────────────────┘
+  Emulator Hub running at localhost:4400
+  Other reserved ports: 4500
+
+Issues? Report them at https://github.com/firebase/firebase-tools/issues and attach the *-debug.log files.
+ 
