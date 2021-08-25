@@ -20,7 +20,7 @@
               </v-col>
             </v-row>
             <v-row>
-              <v-col cols="5">
+              <v-col :cols="numColsByline">
                 <v-skeleton-loader type="list-item-avatar-three-line"></v-skeleton-loader>
               </v-col>
             </v-row>
@@ -67,6 +67,13 @@ export default {
   computed: {
     postId () {
       return this.$route.params.id
+    },
+
+    shrinkByline () {
+      if (this.$vuetify.breakpoint.name == 'xs' || this.$vuetify.breakpoint.name == 'sm') {
+        return 3
+      }
+      return 12
     }
   },
 
