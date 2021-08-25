@@ -1,5 +1,5 @@
 <template>
-  <v-bottom-navigation v-model="value">
+  <v-bottom-navigation absolute v-model="value">
     <v-row>
       <v-col class="d-flex align-center justify-center">
         <router-link :to="{ name: 'Home' }">
