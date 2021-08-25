@@ -7,13 +7,15 @@
     </v-row>
     <v-row>
       <v-col v-for="n in 5" :key="n" cols="12">
-        <v-card shaped>
-          <v-skeleton-loader class="pl-3 pt-3" type="heading"></v-skeleton-loader>
-          <v-card-text>
-            <v-skeleton-loader class="pb-2" type="image"></v-skeleton-loader>
-            <v-skeleton-loader type="paragraph"></v-skeleton-loader>
-          </v-card-text>
-        </v-card>
+        <router-link :to="{ name: 'Post', params: { id: n } }">
+          <v-card shaped>
+            <v-skeleton-loader class="pl-3 pt-3" type="heading"></v-skeleton-loader>
+            <v-card-text>
+              <v-skeleton-loader class="pb-2" type="image"></v-skeleton-loader>
+              <v-skeleton-loader type="paragraph"></v-skeleton-loader>
+            </v-card-text>
+          </v-card>
+        </router-link>
       </v-col>
     </v-row>
   </div>

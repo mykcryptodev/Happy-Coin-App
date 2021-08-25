@@ -1,6 +1,9 @@
 <template>
   <v-app>
     <v-main>
+      <transition name="slide-fade-up-slow">
+        <Navbar v-if="showNav" />
+      </transition>
       <transition name="slide-fade-down-slow">
         <div v-if="loadingApp">
           <v-row>
@@ -17,25 +20,22 @@
             </v-col>
           </v-row>
         </div>
-        <div v-else>
+        <div v-else class="pt-10">
           <router-view></router-view>
         </div>
       </transition>
     </v-main>
-    <transition name="slide-fade-up-slow">
-      <BottomNav v-if="showNav" />
-    </transition>
   </v-app>
 </template>
 
 <script>
-import BottomNav from '@/components/navigation/BottomNav'
+import Navbar from '@/components/navigation/Navbar'
 
 export default {
   name: 'App',
 
   components: {
-    BottomNav
+    Navbar
   },
 
   data: () => ({

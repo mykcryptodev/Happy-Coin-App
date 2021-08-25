@@ -46,6 +46,15 @@ Vue.use(VueRouter)
   //   }
   // },
   {
+    path: '/post',
+    name: 'Post',
+    component: () => import('../views/Post.vue'),
+    meta: {
+      hasNavigation: true,
+      requiresAuth: false
+    }
+  },
+  {
     path: '/profile',
     name: 'Profile',
     component: () => import('../views/auth/Profile.vue'),
