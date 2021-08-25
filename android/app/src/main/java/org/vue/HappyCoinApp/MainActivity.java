@@ -1,4 +1,4 @@
-package org.vue.HappyCoin;
+package org.vue.HappyCoinApp;
 
 import android.os.Bundle;
 

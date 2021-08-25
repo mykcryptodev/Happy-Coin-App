@@ -114,3 +114,66 @@ INFO: Adding handler(s) to newly registered Channel.
 
 Issues? Report them at https://github.com/firebase/firebase-tools/issues and attach the *-debug.log files.
  
+[info] i  database: Change detected, updating rules for happy-coin-9ac8b-default-rtdb... {"metadata":{"emulator":{"name":"database"},"message":"Change detected, updating rules for happy-coin-9ac8b-default-rtdb..."}}
+[debug] [2021-08-25T13:24:42.686Z] >>> HTTP REQUEST PUT http://localhost:9000/.settings/rules.json?ns=happy-coin-9ac8b-default-rtdb  
+ {
+  "rules": {
+    ".read": false,
+    ".write": false
+  }
+}
+
+[info] i  firestore: Change detected, updating rules... 
+[debug] [2021-08-25T13:24:42.688Z] >>> HTTP REQUEST PUT http://localhost:8081/emulator/v1/projects/happy-coin-9ac8b:securityRules  
+ {"ignore_errors":true,"rules":{"files":[{"name":"security.rules","content":"rules_version = '2';\nservice cloud.firestore {\n  match /databases/{database}/documents {\n    match /{document=**} {\n      allow read, write: if false;\n    }\n  }\n}"}]}}
+[info] i  storage: Change detected, updating rules for Cloud Storage... {"metadata":{"emulator":{"name":"storage"},"message":"Change detected, updating rules for Cloud Storage..."}}
+[debug] [2021-08-25T13:24:42.861Z] Aug 25, 2021 9:24:42 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Aug 25, 2021 9:24:42 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-08-25T13:24:43.071Z] <<< HTTP RESPONSE 200 {"content-length":"15","content-type":"application/json; charset=utf-8","access-control-allow-origin":"*","cache-control":"no-cache","x-firebase-project-id":"happy-coin-9ac8b-default-rtdb","x-firebase-project-number":"123456789","x-firebase-uuid":"f75f2bba-378c-4dce-bbe3-54cd32282261"}
+[info] ✔  database: Rules updated. {"metadata":{"emulator":{"name":"database"},"message":"Rules updated."}}
+[debug] [2021-08-25T13:24:43.388Z] Aug 25, 2021 9:24:43 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Aug 25, 2021 9:24:43 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected HTTP/2 connection.\n"}}
+[debug] [2021-08-25T13:24:44.653Z] <<< HTTP RESPONSE 200 {"content-type":"application/json","content-length":"4"}
+[info] ✔  firestore: Rules updated. 
+[info] i  database: Change detected, updating rules for happy-coin-9ac8b-default-rtdb... {"metadata":{"emulator":{"name":"database"},"message":"Change detected, updating rules for happy-coin-9ac8b-default-rtdb..."}}
+[debug] [2021-08-25T13:28:10.310Z] >>> HTTP REQUEST PUT http://localhost:9000/.settings/rules.json?ns=happy-coin-9ac8b-default-rtdb  
+ {
+  "rules": {
+    ".read": false,
+    ".write": false
+  }
+}
+
+[info] i  firestore: Change detected, updating rules... 
+[debug] [2021-08-25T13:28:10.345Z] >>> HTTP REQUEST PUT http://localhost:8081/emulator/v1/projects/happy-coin-9ac8b:securityRules  
+ {"ignore_errors":true,"rules":{"files":[{"name":"security.rules","content":"rules_version = '2';\nservice cloud.firestore {\n  match /databases/{database}/documents {\n    match /{document=**} {\n      allow read, write: if false;\n    }\n  }\n}"}]}}
+[info] i  storage: Change detected, updating rules for Cloud Storage... {"metadata":{"emulator":{"name":"storage"},"message":"Change detected, updating rules for Cloud Storage..."}}
+[debug] [2021-08-25T13:28:10.512Z] Aug 25, 2021 9:28:10 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Aug 25, 2021 9:28:10 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-08-25T13:28:10.580Z] <<< HTTP RESPONSE 200 {"content-length":"15","content-type":"application/json; charset=utf-8","access-control-allow-origin":"*","cache-control":"no-cache","x-firebase-project-id":"happy-coin-9ac8b-default-rtdb","x-firebase-project-number":"123456789","x-firebase-uuid":"f75f2bba-378c-4dce-bbe3-54cd32282261"}
+[info] ✔  database: Rules updated. {"metadata":{"emulator":{"name":"database"},"message":"Rules updated."}}
+[debug] [2021-08-25T13:28:10.712Z] <<< HTTP RESPONSE 200 {"content-type":"application/json","content-length":"4"}
+[info] ✔  firestore: Rules updated. 
+[info] i  database: Change detected, updating rules for happy-coin-9ac8b-default-rtdb... {"metadata":{"emulator":{"name":"database"},"message":"Change detected, updating rules for happy-coin-9ac8b-default-rtdb..."}}
+[debug] [2021-08-25T13:29:42.349Z] >>> HTTP REQUEST PUT http://localhost:9000/.settings/rules.json?ns=happy-coin-9ac8b-default-rtdb  
+ {
+  "rules": {
+    ".read": false,
+    ".write": false
+  }
+}
+
+[info] i  firestore: Change detected, updating rules... 
+[debug] [2021-08-25T13:29:42.411Z] >>> HTTP REQUEST PUT http://localhost:8081/emulator/v1/projects/happy-coin-9ac8b:securityRules  
+ {"ignore_errors":true,"rules":{"files":[{"name":"security.rules","content":"rules_version = '2';\nservice cloud.firestore {\n  match /databases/{database}/documents {\n    match /{document=**} {\n      allow read, write: if false;\n    }\n  }\n}"}]}}
+[info] i  storage: Change detected, updating rules for Cloud Storage... {"metadata":{"emulator":{"name":"storage"},"message":"Change detected, updating rules for Cloud Storage..."}}
+[debug] [2021-08-25T13:29:42.534Z] Aug 25, 2021 9:29:42 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Aug 25, 2021 9:29:42 AM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-08-25T13:29:42.579Z] <<< HTTP RESPONSE 200 {"content-length":"15","content-type":"application/json; charset=utf-8","access-control-allow-origin":"*","cache-control":"no-cache","x-firebase-project-id":"happy-coin-9ac8b-default-rtdb","x-firebase-project-number":"123456789","x-firebase-uuid":"f75f2bba-378c-4dce-bbe3-54cd32282261"}
+[info] ✔  database: Rules updated. {"metadata":{"emulator":{"name":"database"},"message":"Rules updated."}}
+[debug] [2021-08-25T13:29:42.649Z] <<< HTTP RESPONSE 200 {"content-type":"application/json","content-length":"4"}
+[info] ✔  firestore: Rules updated. 
