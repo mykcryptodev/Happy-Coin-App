@@ -2,11 +2,13 @@
   <v-bottom-navigation v-model="value">
     <v-row>
       <v-col class="d-flex align-center justify-center">
-        <v-btn value="recent" rounded>
-          <span>Recent</span>
+        <router-link :to="{ name: 'Home' }">
+          <v-btn value="home" rounded>
+            <span>Home</span>
 
-          <v-icon>fa-history</v-icon>
-        </v-btn>
+            <v-icon>fa-home</v-icon>
+          </v-btn>
+        </router-link>
 
         <v-btn value="favorites" rounded>
           <span>Favorites</span>
@@ -31,7 +33,7 @@ export default {
   name: 'BottomNav',
 
   data: () => ({
-    value: 'recent'
+    value: 'home'
   }),
 
   computed: {
