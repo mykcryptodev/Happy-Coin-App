@@ -1,23 +1,23 @@
 <template>
   <v-bottom-navigation absolute v-model="value">
     <v-row>
-      <v-col class="d-flex align-center justify-center">
+      <v-col class="d-flex align-center justify-space-around">
         <router-link :to="{ name: 'Home' }">
-          <v-btn value="home" rounded>
+          <v-btn value="home" rounded text>
             <span>Home</span>
 
             <v-icon>fa-home</v-icon>
           </v-btn>
         </router-link>
 
-        <v-btn value="favorites" rounded>
+        <v-btn value="favorites" rounded text>
           <span>Favorites</span>
 
           <v-icon>fa-heart</v-icon>
         </v-btn>
 
         <router-link :to="{ name: authButton.routeName }">
-          <v-btn value="auth" rounded>
+          <v-btn value="auth" rounded text>
             <span>{{ authButton.label }}</span>
 
             <v-icon>{{ authButton.icon }}</v-icon>
@@ -38,7 +38,7 @@ export default {
 
   computed: {
     authButton () {
-      if (this.user) {
+      if (this.user && !this.user.isAnonymous) {
         return {
           icon: 'fa-user-circle',
           label: 'Profile',

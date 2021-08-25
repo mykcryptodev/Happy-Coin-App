@@ -14,10 +14,18 @@ let app = ''
 firebase.initializeApp(firebaseConfig)
 
 if (!environment.isProd) {
-  firebase.functions().useFunctionsEmulator('http://localhost:5001')
+  firebase.functions().useEmulator('localhost', 5001)
+  firebase.firestore().useEmulator('localhost', 8081)
+  firebase.auth().useEmulator('http://localhost:9099/')
+} else {
+  firebase.analytics()
 }
 
-firebase.auth().onAuthStateChanged((user) => {
+firebase.auth().onAuthStateChanged(async user => {
+  // if there is no user, sign them in anonymously
+  if (!user || user === null) {
+    await firebase.auth().signInAnonymously()
+  }
   store.dispatch('setUser', user)
   if (!app) {
     app = new Vue({

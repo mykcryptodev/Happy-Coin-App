@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import { app } from './modules/app'
+import { post } from './modules/post'
 import { snackbar } from './modules/snackbar'
 import { user } from './modules/user'
 
@@ -17,6 +18,7 @@ export default new Vuex.Store({
   },
   modules: {
     app,
+    post,
     snackbar,
     user,
   }
