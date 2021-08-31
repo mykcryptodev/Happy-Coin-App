@@ -1,29 +1,68 @@
 <template>
-  <v-app-bar class="pa-0 ma-0" fixed flat>
-    <v-bottom-navigation absolute v-model="value" flat>
-      <v-row>
-        <v-col class="d-flex align-center justify-space-around">
-          <router-link :to="{ name: 'Home' }">
-            <v-btn value="home" rounded text>
-              <span>Home</span>
+  <v-card class="mx-auto overflow-hidden sharp-top router-view v100" :elevation="0">
+    <v-app-bar v-if="showNav">
+      <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
 
-              <v-icon>fa-home</v-icon>
-            </v-btn>
-          </router-link>
+      <v-toolbar-title class="pl-0">
+        <router-link :to="{ name: 'Home' }">
+          <div class="d-flex align-center">
+            <img src="@/assets/logo.png" height="32px">
+            <span class="ml-2">Happy</span>
+          </div>
+        </router-link>
+      </v-toolbar-title>
 
-          <img src="@/assets/logo.png" height="32px">
+      <v-spacer></v-spacer>
 
-          <router-link :to="{ name: authButton.routeName }">
-            <v-btn value="auth" rounded text>
-              <span>{{ authButton.label }}</span>
+      <!-- <v-btn icon>
+        <v-icon>mdi-magnify</v-icon>
+      </v-btn>
 
-              <v-icon>{{ authButton.icon }}</v-icon>
-            </v-btn>
-          </router-link>
-        </v-col>
-      </v-row>
-    </v-bottom-navigation>
-  </v-app-bar>
+      <v-btn icon>
+        <v-icon>mdi-filter</v-icon>
+      </v-btn> -->
+
+      <router-link :to="{ name: authButton.routeName }">
+        <v-btn value="auth" rounded text>
+          <v-icon left >{{ authButton.icon }}</v-icon>
+          <span>{{ authButton.label }}</span>
+        </v-btn>
+      </router-link>
+    </v-app-bar>
+
+    <v-navigation-drawer
+      v-model="drawer"
+      absolute
+      temporary
+    >
+      <v-list
+        nav
+        dense
+      >
+        <v-list-item-group
+          v-model="group"
+          active-class="deep-purple--text text--accent-4"
+        >
+          <v-list-item>
+            <v-list-item-title>Foo</v-list-item-title>
+          </v-list-item>
+
+          <v-list-item>
+            <v-list-item-title>Bar</v-list-item-title>
+          </v-list-item>
+
+          <v-list-item>
+            <v-list-item-title>Fizz</v-list-item-title>
+          </v-list-item>
+
+          <v-list-item>
+            <v-list-item-title>Buzz</v-list-item-title>
+          </v-list-item>
+        </v-list-item-group>
+      </v-list>
+    </v-navigation-drawer>
+    <router-view></router-view>
+  </v-card>
 </template>
 
 <script>
@@ -31,8 +70,17 @@ export default {
   name: 'BottomNav',
 
   data: () => ({
-    value: 'home'
+    value: 'home',
+    
+    drawer: false,
+    group: null,
   }),
+
+  watch: {
+    group () {
+      this.drawer = false
+    },
+  },
 
   computed: {
     authButton () {
@@ -49,6 +97,10 @@ export default {
         routeName: 'Login'
       }
     },
+    
+    showNav () {
+      return this.$store.getters.getShowNav
+    },
 
     user () {
       return this.$store.getters.getUser
@@ -58,8 +110,16 @@ export default {
 </script>
 
 <style scoped>
-a {
-  text-decoration: none;
+.v-application a {
+  color: inherit !important;
+}
+
+.router-view {
+  background: transparent !important;
+}
+
+.sharp-top {
+  border-radius: 0px 0px 2px 2px !important;
 }
 </style>
 

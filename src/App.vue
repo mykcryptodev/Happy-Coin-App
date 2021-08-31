@@ -2,7 +2,7 @@
   <v-app>
     <v-main>
       <transition name="slide-fade-up-slow">
-        <Navbar v-if="showNav" />
+        <Navbar />
       </transition>
       <transition name="slide-fade-down-slow">
         <div v-if="loadingApp">
@@ -19,9 +19,6 @@
               ></v-progress-circular>
             </v-col>
           </v-row>
-        </div>
-        <div v-else class="pt-10">
-          <router-view></router-view>
         </div>
       </transition>
     </v-main>
@@ -45,9 +42,6 @@ export default {
   computed: {
     loadingApp () {
       return this.$store.getters.getLoadingApp
-    },
-    showNav () {
-      return this.$store.getters.getShowNav
     }
   }
 };
@@ -66,6 +60,10 @@ body {
 
 a {
   text-decoration: none;
+}
+
+.v100 {
+  height: 100%;
 }
 
 /* App font */
