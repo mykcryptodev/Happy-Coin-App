@@ -1,5 +1,5 @@
 <template>
-  <v-card class="mx-auto overflow-hidden sharp-top router-view v100" :elevation="0">
+  <v-card class="mx-auto overflow-hidden sharp-top bg-transparent v100" :elevation="0">
     <v-app-bar v-if="showNav">
       <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
 
@@ -13,14 +13,6 @@
       </v-toolbar-title>
 
       <v-spacer></v-spacer>
-
-      <!-- <v-btn icon>
-        <v-icon>mdi-magnify</v-icon>
-      </v-btn>
-
-      <v-btn icon>
-        <v-icon>mdi-filter</v-icon>
-      </v-btn> -->
 
       <router-link :to="{ name: authButton.routeName }">
         <v-btn value="auth" rounded text>
@@ -114,7 +106,7 @@ export default {
   color: inherit !important;
 }
 
-.router-view {
+.bg-transparent {
   background: transparent !important;
 }
 
