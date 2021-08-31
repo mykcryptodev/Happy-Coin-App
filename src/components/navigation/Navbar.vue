@@ -49,6 +49,15 @@
           </v-list-item>
         </v-list-item-group>
       </v-list>
+      <v-bottom-navigation :elevation="0" class="mt-10">
+        <p class="text--disabled">
+          <small>
+            <strong>
+              version 1.2.2
+            </strong>
+          </small>
+        </p>
+      </v-bottom-navigation>
     </v-navigation-drawer>
     <router-view></router-view>
   </v-card>
@@ -126,6 +135,10 @@ export default {
 <style scoped>
 .v-application a {
   color: inherit !important;
+}
+
+.v-item-group.v-bottom-navigation {
+  box-shadow: none;
 }
 
 .bg-transparent {
