@@ -1,6 +1,7 @@
 import '@fortawesome/fontawesome-free/css/all.css'
 import Vue from 'vue';
 import Vuetify from 'vuetify/lib/framework';
+import colors from 'vuetify/lib/util/colors';
 
 Vue.use(Vuetify);
 
@@ -11,8 +12,8 @@ export default new Vuetify({
   theme: {
     themes: {
       light: {
-        primary: 'amber lighten-1',
-        secondary: 'indigo darken-3'
+        primary: colors.deepPurple.darken3,
+        secondary: colors.indigo.darken3
       }
     }
   }

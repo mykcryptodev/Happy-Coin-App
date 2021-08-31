@@ -68,7 +68,7 @@ Vue.use(VueRouter)
     name: 'Login',
     component: () => import('../views/auth/Login.vue'),
     meta: {
-      hasNavigation: false
+      hasNavigation: true
     }
   },
   {
