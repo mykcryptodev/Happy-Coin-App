@@ -35,20 +35,17 @@
           v-model="group"
           active-class="deep-purple--text text--accent-4"
         >
-          <v-list-item>
-            <v-list-item-title>Foo</v-list-item-title>
-          </v-list-item>
-
-          <v-list-item>
-            <v-list-item-title>Bar</v-list-item-title>
-          </v-list-item>
-
-          <v-list-item>
-            <v-list-item-title>Fizz</v-list-item-title>
-          </v-list-item>
-
-          <v-list-item>
-            <v-list-item-title>Buzz</v-list-item-title>
+          <v-list-item 
+            v-for="item in items" 
+            :key="item.title" 
+            :to="{ name: item.routeName }"
+          >
+            <v-list-item-icon>
+              <v-icon>{{ item.icon }}</v-icon>
+            </v-list-item-icon>
+            <v-list-item-content>
+              <v-list-item-title>{{ item.title }}</v-list-item-title>
+            </v-list-item-content>
           </v-list-item>
         </v-list-item-group>
       </v-list>
@@ -62,10 +59,35 @@ export default {
   name: 'BottomNav',
 
   data: () => ({
-    value: 'home',
-    
     drawer: false,
     group: null,
+    items: [
+      {
+        title: 'Announcements',
+        icon: 'fa-bullhorn',
+        routeName: 'Announcements'
+      },
+      {
+        title: 'Wallet',
+        icon: 'fa-wallet',
+        routeName: 'Wallet'
+      },
+      {
+        title: 'Resources',
+        icon: 'fa-book',
+        routeName: 'Resources'
+      },
+      {
+        title: 'Exercises',
+        icon: 'fa-brain',
+        routeName: 'Exercises'
+      },
+      {
+        title: 'Questionairre',
+        icon: 'fa-clipboard-list',
+        routeName: 'Questionairre'
+      },
+    ]
   }),
 
   watch: {
