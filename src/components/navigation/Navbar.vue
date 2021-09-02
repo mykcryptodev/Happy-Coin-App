@@ -3,23 +3,28 @@
     <v-app-bar v-if="showNav">
       <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
 
-      <v-toolbar-title class="pl-0">
-        <router-link :to="{ name: 'Home' }">
-          <div class="d-flex align-center">
-            <img src="@/assets/logo.png" height="32px">
-            <span class="ml-2">Happy</span>
-          </div>
-        </router-link>
-      </v-toolbar-title>
+      
+        <v-row>
+          <v-col class="d-flex justify-center">
+            <v-toolbar-title>
+              <router-link :to="{ name: 'Home' }">
+                <span style="font-size: 32px;">
+                  happycoin
+                </span>
+              </router-link>
+            </v-toolbar-title>
+          </v-col>
+        </v-row>
+      
 
-      <v-spacer></v-spacer>
+      <!-- <v-spacer></v-spacer>
 
       <router-link :to="{ name: authButton.routeName }">
         <v-btn value="auth" rounded text>
           <v-icon left >{{ authButton.icon }}</v-icon>
           <span>{{ authButton.label }}</span>
         </v-btn>
-      </router-link>
+      </router-link> -->
     </v-app-bar>
 
     <v-navigation-drawer

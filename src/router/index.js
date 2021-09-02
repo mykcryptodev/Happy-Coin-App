@@ -55,6 +55,15 @@ Vue.use(VueRouter)
     }
   },
   {
+    path: '/wallet',
+    name: 'Wallet',
+    component: () => import('../views/Wallet.vue'),
+    meta: {
+      hasNavigation: true,
+      requiresAuth: false
+    }
+  },
+  {
     path: '/profile',
     name: 'Profile',
     component: () => import('../views/auth/Profile.vue'),
