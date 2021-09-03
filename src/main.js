@@ -27,6 +27,7 @@ firebase.auth().onAuthStateChanged(async user => {
     await firebase.auth().signInAnonymously()
   }
   store.dispatch('setUser', user)
+  store.dispatch('setUserDoc', user)
   if (!app) {
     app = new Vue({
       router,
