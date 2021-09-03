@@ -9,7 +9,7 @@
     </v-card>
     <v-card shaped v-else>
       <router-link :to="{ name: 'Post', params: { id: post.id } }">
-        <v-card-title>
+        <v-card-title style="word-break: break-word">
           {{ titleComputed }}
         </v-card-title>
         <v-row>
