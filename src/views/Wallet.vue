@@ -1,55 +1,57 @@
 <template>
-  <v-container class="pt-10">
+  <v-container class="pt-10 max-width">
     <v-row>
-      <v-col>
-        <v-card shaped>
-          <v-row>
-            <v-col class="d-flex justify-center">
-              <v-card-title class="pb-0 mb-0">
-                <span v-if="!userWalletUsdValue">
-                  $0.00
-                </span>
-                <span v-else>
-                  {{ userWalletUsdValue }}
-                </span>
-              </v-card-title>
-            </v-col>
-          </v-row>
-          <v-row>
-            <v-col class="d-flex justify-center">
-              <v-card-subtitle class="d-flex align-center pt-0 mt-0">
-                <img src="@/assets/logo.png" height="16px">
-                <span v-if="userWalletTokenBalance" class="ml-1">
-                  {{ userWalletTokenBalance }}
-                </span>
-                <span v-else class="ml-1">
-                  0
-                </span>
-              </v-card-subtitle>
-            </v-col>
-          </v-row>
-          <v-card-text>
+      <transition name="slide-fade-down-slow">
+        <v-col v-if="!isLoading">
+          <v-card shaped>
             <v-row>
-              <v-col>
-                <UserWalletAddressForm />
+              <v-col class="d-flex justify-center">
+                <v-card-title class="pb-0 mb-0">
+                  <span v-if="!userWalletUsdValue">
+                    $0.00
+                  </span>
+                  <span v-else>
+                    {{ userWalletUsdValue }}
+                  </span>
+                </v-card-title>
               </v-col>
             </v-row>
-            <!-- <v-row>
-              <v-col>
-                <v-btn rounded>
-                  <v-icon left>fa-paper-plane</v-icon>
-                  Send
-                </v-btn>
+            <v-row>
+              <v-col class="d-flex justify-center">
+                <v-card-subtitle class="d-flex align-center pt-0 mt-0">
+                  <img src="@/assets/logo.png" height="16px">
+                  <span v-if="userWalletTokenBalance" class="ml-1">
+                    {{ userWalletTokenBalance }}
+                  </span>
+                  <span v-else class="ml-1">
+                    0
+                  </span>
+                </v-card-subtitle>
               </v-col>
-            </v-row> -->
-          </v-card-text>
-          <v-card-actions class="d-flex justify-center">
-            <small class="text--disabled">
-              current price: ${{ price }}
-            </small>
-          </v-card-actions>
-        </v-card>
-      </v-col>
+            </v-row>
+            <v-card-text>
+              <v-row>
+                <v-col>
+                  <UserWalletAddressForm />
+                </v-col>
+              </v-row>
+              <!-- <v-row>
+                <v-col>
+                  <v-btn rounded>
+                    <v-icon left>fa-paper-plane</v-icon>
+                    Send
+                  </v-btn>
+                </v-col>
+              </v-row> -->
+            </v-card-text>
+            <v-card-actions class="d-flex justify-center">
+              <small class="text--disabled">
+                current price: ${{ price }}
+              </small>
+            </v-card-actions>
+          </v-card>
+        </v-col>
+      </transition>
     </v-row>
   </v-container>
 </template>
@@ -65,6 +67,7 @@ export default {
   },
 
   data: () => ({
+    isLoading: true,
     showUserWalletAddressForm: true,
     userWalletUsdValue: '',
     userWalletTokenBalance: ''
@@ -73,6 +76,7 @@ export default {
   async created () {
     await this.$store.dispatch('setPrice')
     this.getUserWalletValue()
+    this.isLoading = false
   },
 
   watch: {

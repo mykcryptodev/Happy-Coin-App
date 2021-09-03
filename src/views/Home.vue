@@ -1,5 +1,5 @@
 <template>
-  <v-container class="mt-10">
+  <v-container class="mt-10 max-width">
     <v-row>
       <v-col>
         <v-card shaped>

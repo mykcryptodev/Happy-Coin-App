@@ -46,7 +46,16 @@ Vue.use(VueRouter)
   //   }
   // },
   {
-    path: '/post',
+    path: '/post/create',
+    name: 'PostCreate',
+    component: () => import('../views/PostCreate.vue'),
+    meta: {
+      hasNavigation: true,
+      requiresAuth: false
+    }
+  },
+  {
+    path: '/post/:id',
     name: 'Post',
     component: () => import('../views/Post.vue'),
     meta: {
