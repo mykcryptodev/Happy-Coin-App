@@ -64,7 +64,9 @@
         </p>
       </v-bottom-navigation>
     </v-navigation-drawer>
-    <router-view></router-view>
+    <div class="d-flex justify-center">
+      <router-view></router-view>
+    </div>
   </v-card>
 </template>
 
@@ -148,6 +150,10 @@ export default {
 
 .bg-transparent {
   background: transparent !important;
+}
+
+.max-width {
+  max-width: 768px;
 }
 
 .sharp-top {

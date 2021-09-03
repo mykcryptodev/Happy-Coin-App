@@ -1,5 +1,5 @@
 <template>
-  <v-container class="pt-10">
+  <v-container class="pt-10 max-width">
     <v-row>
       <v-col class="shrink">
         <v-card shaped>
@@ -10,71 +10,52 @@
         </v-card>
       </v-col>
     </v-row>
-    <v-row>
+    <v-row v-if="isLoading">
       <v-col>
-        <v-card shaped>
-          <v-card-text>
-            <v-row>
-              <v-col>
-                <v-skeleton-loader type="heading"></v-skeleton-loader>
-              </v-col>
-            </v-row>
-            <v-row>
-              <v-col :cols="numColsByline">
-                <v-skeleton-loader type="list-item-avatar-three-line"></v-skeleton-loader>
-              </v-col>
-            </v-row>
-            <v-row>
-              <v-col>
-                <v-skeleton-loader type="image"></v-skeleton-loader>
-              </v-col>
-            </v-row>
-            <v-row>
-              <v-col>
-                <v-skeleton-loader type="paragraph"></v-skeleton-loader>
-              </v-col>
-            </v-row>
-            <v-row>
-              <v-col>
-                <v-skeleton-loader type="paragraph"></v-skeleton-loader>
-                <v-skeleton-loader type="paragraph"></v-skeleton-loader>
-                <v-skeleton-loader type="paragraph"></v-skeleton-loader>
-                <v-skeleton-loader type="paragraph"></v-skeleton-loader>
-                <v-skeleton-loader type="paragraph"></v-skeleton-loader>
-              </v-col>
-              <v-col>
-                <v-skeleton-loader type="image"></v-skeleton-loader>
-              </v-col>
-            </v-row>
-            <v-row>
-              <v-col>
-                <v-skeleton-loader type="paragraph"></v-skeleton-loader>
-                <v-skeleton-loader type="paragraph"></v-skeleton-loader>
-              </v-col>
-            </v-row>
-          </v-card-text>
-        </v-card>
+        <PostSkeletonLoader />
       </v-col>
     </v-row>
-
+    <v-row v-else>
+      <transition name="slide-fade-down-slow">
+        <v-col>
+          <PostCard :post="post" :inList="false" />
+        </v-col>
+      </transition>
+    </v-row>
   </v-container>
 </template>
 
 <script>
+import PostCard from '@/components/post/Card'
+import PostSkeletonLoader from '@/components/post/SkeletonLoader'
+
 export default {
   name: 'Post',
 
+  components: {
+    PostCard,
+    PostSkeletonLoader
+  },
+
+  created () {
+    if (this.posts.length === 0) {
+      this.$store.dispatch('setPosts')
+    }
+  },
+
   computed: {
+    isLoading () {
+      return !this.post
+    },
+    post () {
+      return this.posts.find(p => p.id === this.postId)
+    },
+    posts () {
+      return this.$store.getters.getPosts
+    },
     postId () {
       return this.$route.params.id
     },
-
-    shrinkByline () {
-      if (this.$vuetify.breakpoint.name == 'xs' || this.$vuetify.breakpoint.name == 'sm') {
-        return 3
-      }
-      return 12
-    }
   },
 
   methods: {

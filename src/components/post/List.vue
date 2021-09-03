@@ -1,11 +1,6 @@
 <template>
   <div>
-    <v-row>
-      <v-col v-for="post in posts" :key="post.id">
-        <PostCard :post="post" class="mb-2" />
-      </v-col>
-    </v-row>
-    <v-row>
+    <v-row v-if="isLoading" class="d-flex justify-center">
       <v-col v-for="n in 5" :key="n" cols="12">
         <router-link :to="{ name: 'Post', params: { id: n } }">
           <v-card shaped>
@@ -17,6 +12,13 @@
           </v-card>
         </router-link>
       </v-col>
+    </v-row>
+    <v-row class="d-flex justify-center">
+      <transition-group name="slide-fade-down-slow">
+        <v-col v-for="post in posts" :key="post.id">
+          <PostCard :post="post" :inList="true" class="mb-2" />
+        </v-col>
+      </transition-group>
     </v-row>
   </div>
 </template>
@@ -36,6 +38,9 @@ export default {
   },
 
   computed: {
+    isLoading () {
+      return this.posts.length === 0
+    },
     posts () {
       return this.$store.getters.getPosts
     }

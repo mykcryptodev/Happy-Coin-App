@@ -10,17 +10,21 @@ export const post = {
     }
   },
   actions: {
+    async createPost (state, payload) {
+      const db = firebase.firestore()
+      return await db.collection('posts').add(payload.post)
+    },
     async setPosts ({ commit }) {
       const db = firebase.firestore()
-      let posts = []
       await db.collection('posts').onSnapshot(querySnapshot => {
+        let posts = []
         querySnapshot.forEach(doc => {
           let post = doc.data()
           post.id = doc.id
           posts.push(post)
         })
+        return commit('setPosts', posts)
       })
-      return commit('setPosts', posts)
     },
   },
   getters: {
